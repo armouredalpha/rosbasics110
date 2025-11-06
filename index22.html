@@ -1,0 +1,221 @@
+<div style="
+  max-width:850px;
+  margin:2em auto;
+  color:#4e89b4;
+  padding:30px 40px;
+  border-radius:16px;
+  text-align:center;
+  box-shadow:0 4px 18px rgba(0,0,0,0.25);
+  font-family:'Segoe UI',sans-serif;
+">
+  <h1 style="font-size:40px; font-weight:900; margin-bottom:10px; color:#BBDEFB;">
+    Welcome to the World of Robotics 🤖
+  </h1>
+  <p style="font-size:18px; line-height:1.8; color:#E3F2FD;">
+    Dive into a universe where <strong>code meets motion</strong>, and imagination becomes mechanical reality.  
+    This workshop will help you understand how robots <b>think, move, and interact</b> using 
+    <span style="color:#80DEEA;">ROS 2, Gazebo, and RViz2</span>.  
+  </p>
+  <p style="font-size:17px; margin-top:15px; color:#B3E5FC;">
+    🚀 Let’s build, simulate, and innovate — one node at a time.
+  </p>
+</div>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ROS2 + Gazebo + RViz2 — What, Why, How</title>
+<style>
+  :root{
+    --bg:#0f1216; --panel:#141922; --ink:#e7eaf0; --muted:#a9b3c5; --accent:#6aa9ff; --ok:#4ade80; --warn:#f59e0b; --bad:#ef4444; --code:#0b0f14;
+    --border: #263043;
+  }
+  html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Segoe UI,system-ui,-apple-system,Arial,sans-serif;line-height:1.55}
+  .wrap{max-width:1050px;margin:32px auto;padding:0 16px}
+  h1{font-size:28px;font-weight:800;margin:6px 0 18px;text-align:center;color:#d0d0d0}
+  h2{font-size:20px;margin:24px 0 8px;color:var(--accent)}
+  h3{font-size:16px;margin:16px 0 6px;color:#c8d6ff}
+  p,li{color:var(--ink)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:16px}
+  .muted{color:var(--muted)}
+  code,kbd{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  pre{background:var(--code);border:1px solid #1d2533;border-radius:12px;padding:12px;overflow:auto}
+  pre code{font-size:13px}
+  .pill{display:inline-block;border:1px solid var(--border);background:#101521;padding:2px 8px;border-radius:999px;font-size:12px;color:var(--muted);margin-right:6px}
+  .why{border-left:4px solid var(--ok);padding-left:12px}
+  .what{border-left:4px solid var(--warn);padding-left:12px}
+  .how{border-left:4px solid var(--accent);padding-left:12px}
+  .tip{border-left:4px solid #7dd3fc;padding-left:12px;background:#0e1621}
+  .kbd{display:inline-block;border:1px solid var(--border);padding:.1em .45em;border-radius:6px;background:#0e1420}
+  a{color:#93c5fd;text-decoration:none}
+  details{background:#101622;border:1px solid var(--border);border-radius:12px;padding:10px 12px}
+  details summary{cursor:pointer;font-weight:700;color:#cfe1ff}
+  hr{border:none;border-top:1px solid var(--border);margin:18px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Simulate. Innovate. Elevate. — ROS 2, Gazebo, RViz2 Primer</h1>
+
+  <div class="grid">
+    <div class="card">
+      <h2>🚦 Big Picture</h2>
+      <p class="what"><strong>What:</strong> ROS 2 is a middleware + tools set for building robot software. Gazebo simulates physics and sensors. RViz2 visualizes your robot and data.</p>
+      <p class="why"><strong>Why:</strong> Decouple code into modular <em>nodes</em>, test safely in sim, and iterate faster before real hardware.</p>
+      <p class="how"><strong>How:</strong> Write nodes (Python/C++), connect them via topics/services/actions, visualize in RViz2, and validate behavior in Gazebo.</p>
+       <img src="HumbleHawksbill_TransparentBG-NoROS.webp" 
+       alt="Descriptive caption here"
+       style="
+         display:block; 
+         margin:auto; 
+         width:70%; 
+         height:auto; 
+         border-radius:10px; 
+         box-shadow:0 4px 15px rgba(0,0,0,0.3); 
+         margin-top:20px; 
+         margin-bottom:25px;
+       " />
+</p>
+
+      <p><span class="pill">Nodes</span><span class="pill">Topics</span><span class="pill">Pub/Sub</span><span class="pill">Services</span><span class="pill">Actions</span><span class="pill">Parameters</span><span class="pill">TF2</span></p>
+    </div>
+
+    <div class="card">
+      <h2>🧭 Core Concepts</h2>
+      <ul>
+        <li><strong>Node:</strong> A process that does one job (e.g., camera, planner).</li>
+        <li><strong>Topic:</strong> Named bus for streaming messages (sensor data, commands).</li>
+        <li><strong>Publisher/Subscriber:</strong> Write/read messages on topics, decoupled in time/space.</li>
+        <li><strong>Callback:</strong> Function executed on events (message received, timer tick).</li>
+        <li><strong>rclpy:</strong> ROS 2 Python client library to write nodes quickly.</li>
+        <li><strong>Service:</strong> Request/response (e.g., reset odometry).</li>
+        <li><strong>Action:</strong> Long-running goal-based tasks (e.g., navigate to pose).</li>
+        <li><strong>Parameters:</strong> Runtime-configurable values for nodes.</li>
+        <li><strong>TF2:</strong> Coordinate frames & transforms (map ↔ base_link ↔ sensors).</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>🧪 Tools</h2>
+      <ul>
+        <li><strong>Gazebo (sim):</strong> 3D physics, sensors, plugins. Test without breaking robots.</li>
+        <li><strong>RViz2 (viz):</strong> Visualize TF, LaserScan, PointCloud, paths, markers.</li>
+        <li><strong>ros2 CLI:</strong> Inspect graph (<code>ros2 node|topic|service|param|action</code>).</li>
+        <li><strong>Launch system:</strong> Start many nodes with one Python launch file.</li>
+        <li><strong>Package/Workspace:</strong> Reusable modules in a <code>colcon</code> workspace.</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr />
+
+  <h2>📦 Minimal Workspace Setup (Theory + Commands)</h2>
+  <div class="card">
+    <p><span class="pill">What</span> A workspace (<code>ros2_ws</code>) holds your packages.</p>
+    <p><span class="pill">Why</span> Keeps projects modular and buildable with <code>colcon</code>.</p>
+    <p><span class="pill">How</span> Create, build, source, run.</p>
+<pre><code># 1) create workspace
+mkdir -p ~/ros2_ws/src &amp;&amp; cd ~/ros2_ws
+# 2) create a Python package
+ros2 pkg create --build-type ament_python demo_nodes --dependencies rclpy std_msgs
+# 3) build and source
+colcon build
+source install/setup.bash
+</code></pre>
+  </div>
+
+  
+  <h2>🗺️ TF2 (Frames & Transforms)</h2>
+  <div class="card">
+    <p class="what"><strong>What:</strong> A tree of coordinate frames updated over time (e.g., <code>map → odom → base_link → camera_link</code>).</p>
+    <p class="why"><strong>Why:</strong> Lets sensors and planners agree on where things are.</p>
+    <p class="how"><strong>How:</strong> Publish transforms (robot_state_publisher, static_transform_publisher) and view in RViz2.</p>
+<pre><code># Static transform example:
+ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 map odom
+</code></pre>
+  </div>
+
+  <h2>🪁 RViz2 — Visualize</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>What</h3>
+      <p>RViz2 displays robot model, TF tree, sensor streams, markers, trajectories.</p>
+      <h3>Why</h3>
+      <p>Debug quickly: see what the robot “sees” and how frames move.</p>
+      <h3>How</h3>
+      <ul>
+        <li>Start: <code>rviz2</code> (or via launch)</li>
+        <li>Set <strong>Fixed Frame</strong> (e.g., <code>map</code> or <code>base_link</code>).</li>
+        <li>Add displays: TF, LaserScan, Odometry, Path, RobotModel.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Quick Start</h3>
+<pre><code># Save a config once you arrange panels:
+rviz2 --display-config my_view.rviz
+
+# Launch with a config in a package launch file (example below).
+</code></pre>
+ <img src="splash.png" 
+       alt="Descriptive caption here"
+       style="
+         display:block; 
+         margin:auto; 
+         width:70%; 
+         height:auto; 
+         border-radius:10px; 
+         box-shadow:0 4px 15px rgba(0,0,0,0.3); 
+         margin-top:20px; 
+         margin-bottom:25px;
+       " />
+</p>
+
+    </div>
+  </div>
+
+  <h2>🏗️ Gazebo — Simulate</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>What</h3>
+      <p>Physics engine + sensor simulation (camera, lidar, IMU) + plugins.</p>
+      <h3>Why</h3>
+      <p>Develop safely and reproducibly without hardware; CI-friendly experiments.</p>
+      <h3>How</h3>
+      <ul>
+        <li>Spawn URDF/SDF robots.</li>
+        <li>Bridge topics to ROS 2 (if needed).</li>
+        <li>Use world files to place obstacles and lights.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Example (Launch Sketch)</h3>
+<pre><code># Typically provided by a sim package; structure looks like:
+ros2 launch gazebo_ros gazebo.launch.py
+# or a custom launch that:
+#  - starts Gazebo
+#  - spawns your robot
+#  - brings up controllers and bridges
+</code></pre>
+
+ <img src="images.png" 
+       alt="Descriptive caption here"
+       style="
+         display:block; 
+         margin:auto; 
+         width:70%; 
+         height:auto; 
+         border-radius:10px; 
+         box-shadow:0 4px 15px rgba(0,0,0,0.3); 
+         margin-top:20px; 
+         margin-bottom:25px;
+       " />
+</p>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>
